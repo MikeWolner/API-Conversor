@@ -1,6 +1,6 @@
 import requests
 
-def obter_produtos():
+def obter_currencie():
     URL = "https://api.hgbrasil.com/finance?key=fd7ccfbb"
     resposta = requests.get(URL)
     dolar = resposta.json()['results']['currencies']['USD']['buy']
@@ -9,7 +9,7 @@ def obter_produtos():
     convertido_dolar = real / dolar
     convertido_euro = real / euro
     return f"Dolar: US${convertido_dolar:.2f}\nEuro: EU${convertido_euro:.2f}"
-print(obter_produtos())
+print(obter_currencie())
 
 
 
